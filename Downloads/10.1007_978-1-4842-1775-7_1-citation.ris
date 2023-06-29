@@ -1,0 +1,17 @@
+TY  - CHAP
+AU  - Mehta, Prateek
+A2  - Mehta, Prateek
+PY  - 2016
+DA  - 2016//
+TI  - Introduction to Google Chrome Extensions
+BT  - Creating Google Chrome Extensions
+SP  - 1
+EP  - 33
+PB  - Apress
+CY  - Berkeley, CA
+AB  - In this chapter you will learn about Google Chrome Extensions, which are a useful way to add functionality to the Google Chrome web browser. We will first take a quick look at some popular Google Chrome Extensions and the technologies that are used to code Chrome Extensions. Then, you will learn how to create your own “Hello World” style Chrome Extension—but only after we describe the features and abilities of Chrome Extensions. Finally, you will learn about publishing Chrome Extensions on the Chrome Web Store (formerly the Google Chrome Extensions Gallery).
+SN  - 978-1-4842-1775-7
+UR  - https://doi.org/10.1007/978-1-4842-1775-7_1
+DO  - 10.1007/978-1-4842-1775-7_1
+ID  - Mehta2016
+ER  - 
