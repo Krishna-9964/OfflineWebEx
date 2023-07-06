@@ -26,6 +26,59 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
   // }); 
 
+  const videoExtensions = [
+    ".mp4",
+    ".mov",
+    ".avi",
+    ".mkv",
+    ".wmv",
+    ".flv",
+    ".webm",
+    ".mpeg",
+    ".mpg",
+    ".m4v",
+    ".3gp",
+    ".f4v",
+    ".swf",
+    ".rm",
+    ".rmvb",
+    ".ogv",
+    ".vob",
+    ".mts",
+    ".m2ts",
+    ".ts",
+    ".divx",
+    ".asf",
+  ];
+
+  const audioExtensions = [
+    ".mp3",
+    ".wav",
+    ".ogg",
+    ".aac",
+    ".flac",
+    ".wma",
+    ".m4a",
+    ".opus",
+    ".aiff",
+    ".alac",
+    ".ape",
+    ".mid",
+    ".midi",
+    ".amr",
+    ".mp2",
+    ".ac3",
+    ".ra",
+    ".pcm",
+    ".au",
+    ".raw",
+    ".mka",
+  ];
+
+
+
+
+
   const numberOfDays = 10000;  // Replace with the desired number of days
 
   // Calculate the start and end times based on the current date
@@ -47,7 +100,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(results)
     results.forEach(function (result) {
       // console.log(result)
-      var s_table = document.getElementById('S-WebSearch')
+      const s_table = document.getElementById('S-WebSearch')
+      const p_table = document.getElementById('S-PDF')
+      const a_table = document.getElementById('S-Audios')
+      const v_table = document.getElementById('S-Videos')
       //creating new row
       var row = document.createElement('tr');
 
@@ -77,13 +133,28 @@ document.addEventListener('DOMContentLoaded', function () {
       row.appendChild(title);
       row.appendChild(LastVisit);
       row.appendChild(VisitCount);
-      s_table.appendChild(row);
+      // s_table.appendChild(row);
+      if (result.url.includes('.pdf')) {
+        p_table.appendChild(row);
+      }
+      else if (videoExtensions.includes(result.url)) {
+        v_table.appendChild(row);
+      }
+      else if (audioExtensions.includes(result.url)) {
+        a_table.appendChild(row);
+      }
+      else {
+        s_table.appendChild(row);
+      }
     });
   });
 
 
   // Download List
-  var dTable = document.getElementById('WebSearch');
+  const dTable = document.getElementById('WebSearch');
+  const pTable = document.getElementById('PDF');
+  const aTable = document.getElementById('Audios');
+  const vTable = document.getElementById('Videos');
 
   chrome.downloads.search({ limit: 300 }, function (results) {
     results.forEach(function (result) {
@@ -116,7 +187,20 @@ document.addEventListener('DOMContentLoaded', function () {
       dRow.appendChild(FileName);
       dRow.appendChild(StartTime);
       dRow.appendChild(EndTime);
-      dTable.appendChild(dRow);
+      // dTable.appendChild(dRow);
+
+      if (result.filename.includes('.pdf')) {
+        pTable.appendChild(dRow);
+      }
+      else if (videoExtensions.includes(result.filename)) {
+        vTable.appendChild(dRow);
+      }
+      else if (audioExtensions.includes(result.filename)) {
+        aTable.appendChild(dRow);
+      }
+      else {
+        dTable.appendChild(dRow);
+      }
     });
   });
 });

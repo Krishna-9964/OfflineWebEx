@@ -32,7 +32,7 @@ input.addEventListener('input', function () {
 input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         suggestionsList.style.display = 'none';
-
+        top_matched.innerHTML = '';
         matchingResults.forEach(function (result) {
             var listItem = document.createElement('li');
             var h = document.createElement('h5');

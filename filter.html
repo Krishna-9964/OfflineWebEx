@@ -9,7 +9,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Manage History</title>
     <style>
       .calendar_button {
         background-color: rgba(0, 0, 0, 0);
@@ -98,7 +98,18 @@
           id="search"
         />
       </div>
-      <div class="content">
+
+      <div id="tabs">
+        <button class = "btn tabs" id="Websites">Websites</button>
+        <button class = "btn tabs" id="Documents">Documents</button>
+        <button class = "btn tabs" id="Videos">Videos</button>
+        <button class = "btn tabs" id="Audios">Audios</button>
+        <button class = "btn tabs" id="Files">Files</button>
+        <button class = "btn tabs" id="Others">Others</button>
+      </div>
+
+
+      <div class="content" id="content">
         <ul id="records">
           <!-- <li class="list-group-item">
             <a href="#">Hello</a>
@@ -109,5 +120,7 @@
       </div>
     </div>
     <script src="filter.js"></script>
+
+
   </body>
 </html>

@@ -6,7 +6,8 @@
     "scripting",
     "downloads",
     "activeTab",
-    "history"
+    "history",
+    "browsingData"
   ],
   "background": {
     "service_worker": "background.js"
